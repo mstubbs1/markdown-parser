@@ -1,4 +1,6 @@
 # Title
 
-[link1](https://en.wikipedia.org/wiki/4th_Army_(Wehrmacht))
-[link2](https://en.wikipedia.org/wiki/4th_Army_(Wehrmacht))
+[a link!](https://something.com)
+[another link!](some-page.html)
+
+some paragraph text after the links
