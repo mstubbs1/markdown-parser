@@ -17,22 +17,18 @@ public class MarkdownParse {
                 break;
             }else{
                 int openBracket = markdown.indexOf("[", currentIndex);
-                //2. find "]", if no, stop
-                if(markdown.indexOf("]", openBracket)==-1){
+                //2. find "](", instead of ] and ( separated. 
+                if(markdown.indexOf("](", openBracket)==-1){
                     break;
                 }else{
-                    int closeBracket = markdown.indexOf("]", openBracket);
-                    if(markdown.indexOf("(", closeBracket)==-1){
+                    int closeBracketOpenParen = markdown.indexOf("](", openBracket);
+                    
+                    if(markdown.indexOf(")", closeBracketOpenParen)==-1){
                         break;
                     }else{
-                        int openParen = markdown.indexOf("(", closeBracket);
-                        if(markdown.indexOf(")", openParen)==-1){
-                            break;
-                        }else{
-                            int closeParen = markdown.indexOf(")", openParen);
-                            toReturn.add(markdown.substring(openParen + 1, closeParen));
-                            currentIndex = closeParen + 1;
-                        }
+                        int closeParen = markdown.indexOf(")", closeBracketOpenParen);
+                        toReturn.add(markdown.substring(closeBracketOpenParen + 2, closeParen));
+                        currentIndex = closeParen + 1;
                     }
                 }
             }
