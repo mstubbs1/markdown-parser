@@ -2,7 +2,8 @@
 
 ])(][[][[]]])random words and incorrect format
 next line is incorrect 
-[)()](hi.com)
+[link with parathesis)(hi)](hi.com)
 [](hi.com)
+
 
 more text here
